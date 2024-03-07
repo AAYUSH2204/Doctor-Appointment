@@ -5,10 +5,17 @@ import heroImg03 from "../assests/images/hero-img03.png";
 import icon01 from "../assests/images/icon01.png";
 import icon02 from "../assests/images/icon02.png";
 import icon03 from "../assests/images/icon03.png";
+import videoIcon from "../assests/images/video-icon.png";
+import avtarIcon from "../assests/images/avatar-icon.png";
+import faqImg from "../assests/images/faq-img.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import About from "../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
+import featureImg from "../assests/images/feature-img.png";
+import DoctorList from "../components/Doctors/DoctorList";
+import FaqList from "./../components/Faq/FaqList";
+import Testinomial from "../components/Testinomial/Testinomial";
 const Home = () => {
   return (
     <>
@@ -152,16 +159,123 @@ const Home = () => {
       <About />
       {/* service section  starts */}
       <section>
-        <div className="xl:w-[470px] mx-auto">
+        <div className="xl:w-[480px] mx-auto">
           <h2 className="heading text-center">Our medical services</h2>
           <p className="text_para text-center">
             World-class care for everyone. Our health System offers unmatched,
             export health care.
           </p>
-          <ServiceList />
         </div>
+        <ServiceList />
       </section>
       {/* service section  ends */}
+
+      {/* feature section starts  */}
+      <section>
+        <div className="container">
+          <div className="flex items-center justify-between flex-col lg:flex-row">
+            {/* feature content  */}
+            <div className="xl:w-[670px]">
+              <h2 className="heading">
+                Get virtual treatment <br />
+                anytime.
+              </h2>
+              <ul className="pl-4">
+                <li className="text_para">
+                  1. Schedule the appointment directly.
+                </li>
+                <li className="text_para">
+                  2. Search for your physician here, and contact their office.
+                </li>
+                <li className="text_para">
+                  3. View our physicians who are accepting new patients , use
+                  the online scheduling tool to select an appointment time.
+                </li>
+              </ul>
+              <Link to="/">
+                <button className="btn">Learn More</button>
+              </Link>
+            </div>
+            <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0">
+              <img src={featureImg} className="w-3/4" alt="" />
+              <div className="w-[150px] lg:w-[240px] bg-white absolute bottom-[50px] lef-0 md:bottom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:pb-[26px] rounded-[10px]">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-[6px] lg:gap-3">
+                    <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600]">
+                      Tue, 24
+                    </p>
+                    <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-textColor font-[400]">
+                      10:00AM
+                    </p>
+                  </div>
+                  <span className="w-5 h-5 lg:w-[34px] lg:h-[34px] flex items-center justify-center bg-yellowColor rounded py-1 px-[6px] lg:py-3 lg:px-[9px]">
+                    <img src={videoIcon} alt=" " />
+                  </span>
+                </div>
+
+                <div className="w-[65px] lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full">
+                  Consultation
+                </div>
+
+                <div className="flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px]">
+                  <img src={avtarIcon} alt="" />
+                  <h4 className="text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor">
+                    Wayne Collins
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* feature section ends  */}
+      {/* our great doctos  */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">Our great doctors</h2>
+            <p className="text_para text-center">
+              World-class care for everyone. Our health System offers unmatched,
+              export health care.
+            </p>
+          </div>
+          <DoctorList />
+        </div>
+      </section>
+      {/*  our great doctors*/}
+
+      {/* faq section starts  */}
+      <section>
+        <div className="container">
+          <div className="flex justify-between gap-[50px] lg:gap-0">
+            <div className="w-1/2 hidden md:block">
+              <img src={faqImg} alt=" " />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h2 className="heading">
+                Most questions by our beloved patients
+              </h2>
+              <FaqList />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* faq section ends  */}
+      {/* testinomial */}
+      <section>
+        <div class="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">What our patient say</h2>
+            <p className="text_para text-center">
+              World-class care for everyone. Our health System offers unmatched,
+              export health care.
+            </p>
+          </div>
+          <Testinomial />
+          {/* <Testinomial /> */}
+        </div>
+      </section>
+      {/* testinomial ends*/}
     </>
   );
 };
